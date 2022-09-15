@@ -3,10 +3,13 @@ import React from "react";
 import { Clock } from "@bigbinary/neeto-icons";
 import { Typography, Tag, Tooltip, Avatar } from "@bigbinary/neetoui";
 
+import NoteDropdown from "./NoteDropdown";
+
 const NoteCard = ({ note }) => (
   <div className="m-3 w-full space-y-2 border p-4 shadow-md">
-    <div>
+    <div className="flex justify-between">
       <Typography style="h3">{note.title}</Typography>
+      <NoteDropdown />
     </div>
     <div className="text-gray-500">
       <Typography style="body2">{note.description}</Typography>
