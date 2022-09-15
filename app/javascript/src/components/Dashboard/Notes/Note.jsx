@@ -3,16 +3,16 @@ import React from "react";
 import { Clock } from "neetoicons";
 import { Typography, Tag, Tooltip, Avatar } from "neetoui";
 
-import { IMG_URL } from "./constants";
-import NoteDropdown from "./DropdownMenu";
+import { USER_IMG_URL } from "./constants";
+import DropdownMenu from "./DropdownMenu";
 
 const Note = ({ note }) => {
-  const createdString = "Created 2 hours ago";
+  const noteLastCreatedAt = "Created 2 hours ago";
   return (
     <div className="m-3 w-full space-y-2 border p-4 shadow-md">
       <div className="flex justify-between">
         <Typography style="h3">{note.title}</Typography>
-        <NoteDropdown />
+        <DropdownMenu />
       </div>
       <div className="text-gray-500">
         <Typography style="body2">{note.description}</Typography>
@@ -28,14 +28,14 @@ const Note = ({ note }) => {
             position="bottom"
           >
             <Typography className="pr-2 text-gray-500" style="body3">
-              {createdString}
+              {noteLastCreatedAt}
             </Typography>
           </Tooltip>
           <Avatar
             className="justify-end pt-1"
             size="small"
             user={{
-              imageUrl: IMG_URL,
+              imageUrl: USER_IMG_URL,
               name: "Oliver",
             }}
           />
