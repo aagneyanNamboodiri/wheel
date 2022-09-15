@@ -18,7 +18,7 @@ const HeaderMenu = ({ showMenu }) => {
           iconProps={[
             {
               icon: Search,
-              onClick: () => setIsSearchCollapsed(!isSearchCollapsed),
+              onClick: () => setIsSearchCollapsed(prevstate => !prevstate),
             },
           ]}
         >

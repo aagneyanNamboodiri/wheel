@@ -6,13 +6,17 @@ import { Typography, Tag, Tooltip, Avatar } from "neetoui";
 import { USER_IMG_URL } from "./constants";
 import DropdownMenu from "./DropdownMenu";
 
-const Note = ({ note }) => {
+const Note = ({ note, refetch, setSelectedNoteIds }) => {
   const noteLastCreatedAt = "Created 2 hours ago";
   return (
     <div className="m-3 w-full space-y-2 border p-4 shadow-md">
       <div className="flex justify-between">
         <Typography style="h3">{note.title}</Typography>
-        <DropdownMenu />
+        <DropdownMenu
+          noteId={note.id}
+          refetch={refetch}
+          setSelectedNoteIds={setSelectedNoteIds}
+        />
       </div>
       <div className="text-gray-500">
         <Typography style="body2">{note.description}</Typography>

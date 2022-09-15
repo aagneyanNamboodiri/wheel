@@ -65,7 +65,14 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          notes.map(note => <Note key={note.id} note={note} />)
+          notes.map(note => (
+            <Note
+              key={note.id}
+              note={note}
+              refetch={fetchNotes}
+              setSelectedNoteIds={setSelectedNoteIds}
+            />
+          ))
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
