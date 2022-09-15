@@ -16,6 +16,7 @@ export const useFormikPasswordConfirmationModal = () => {
   const handlePasswordConfirmation = passwordFormValues => {
     setPassword(passwordFormValues["password"]);
     setShowPasswordModal(false);
+    // @ts-ignore
     formRef.current?.submitForm();
   };
 
