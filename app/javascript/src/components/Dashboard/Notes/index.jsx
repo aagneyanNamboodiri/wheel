@@ -1,5 +1,7 @@
+// @ts-nocheck
 import React, { useState, useEffect } from "react";
 
+// @ts-ignore
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
@@ -31,6 +33,7 @@ const Notes = () => {
       const { data } = await notesApi.fetch();
       setNotes(data.notes);
     } catch (error) {
+      // @ts-ignore
       logger.error(error);
     } finally {
       setLoading(false);
