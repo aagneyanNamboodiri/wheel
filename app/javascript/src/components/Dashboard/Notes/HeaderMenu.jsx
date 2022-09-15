@@ -1,12 +1,8 @@
-// @ts-nocheck
 import React, { useState } from "react";
 
-// @ts-ignore
 import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "@bigbinary/neetoui";
 import { MenuBar } from "@bigbinary/neetoui/layouts";
-// @ts-ignore
-// @ts-ignore
 
 const HeaderMenu = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);

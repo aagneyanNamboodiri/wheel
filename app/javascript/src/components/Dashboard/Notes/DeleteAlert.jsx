@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// @ts-ignore
 import { Alert } from "neetoui";
 
 import notesApi from "apis/notes";
