@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
+// @ts-ignore
 import { Form, Formik } from "formik";
+// @ts-ignore
 import { Button, Modal, Typography } from "neetoui";
+// @ts-ignore
 import { Input } from "neetoui/formik";
 
 import {
@@ -19,6 +22,7 @@ const ConfirmPasswordFormModal = ({
   const innerRef = useRef();
 
   useEffect(() => {
+    // @ts-ignore
     innerRef.current?.resetForm?.();
   }, [isOpen]);
 
