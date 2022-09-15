@@ -1,7 +1,5 @@
-// @ts-nocheck
 import React, { useState, useEffect } from "react";
 
-// @ts-ignore
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
@@ -11,7 +9,7 @@ import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import HeaderMenu from "./HeaderMenu";
-import NoteCard from "./NoteCard";
+import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
@@ -67,7 +65,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          notes.map(note => <NoteCard key={note.id} note={note} />)
+          notes.map(note => <Note key={note.id} note={note} />)
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

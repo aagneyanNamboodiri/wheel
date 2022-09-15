@@ -1,7 +1,7 @@
 import React from "react";
 
-import { MenuVertical } from "@bigbinary/neeto-icons";
-import { Dropdown } from "@bigbinary/neetoui";
+import { MenuVertical } from "neetoicons";
+import { Dropdown } from "neetoui";
 
 const NoteDropdown = () => (
   <Dropdown buttonStyle="text" icon={MenuVertical}>
