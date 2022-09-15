@@ -15,6 +15,7 @@ const PrivateRoute = ({
       <Redirect
         to={{
           pathname: redirectRoute,
+          // @ts-ignore
           from: props.location,
         }}
       />
