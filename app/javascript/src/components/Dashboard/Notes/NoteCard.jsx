@@ -1,25 +1,15 @@
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
-// @ts-nocheck
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-duplicate-imports */
 import React from "react";
 
-// @ts-ignore
-// @ts-ignore
 import { Clock } from "@bigbinary/neeto-icons";
-// @ts-ignore
-import { Typography, Tag, Tooltip } from "@bigbinary/neetoui";
-// @ts-ignore
-// @ts-ignore
-import { Avatar } from "@bigbinary/neetoui";
-// @ts-ignore
+import { Typography, Tag, Tooltip, Avatar } from "@bigbinary/neetoui";
+
+import NoteDropdown from "./NoteDropdown";
 
 const NoteCard = ({ note }) => (
-  // @ts-ignore
   <div className="m-3 w-full space-y-2 border p-4 shadow-md">
-    <div>
+    <div className="flex justify-between">
       <Typography style="h3">{note.title}</Typography>
+      <NoteDropdown />
     </div>
     <div className="text-gray-500">
       <Typography style="body2">{note.description}</Typography>

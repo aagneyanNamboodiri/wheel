@@ -3,10 +3,7 @@ import React, { useState, useEffect } from "react";
 
 // @ts-ignore
 import EmptyNotesListImage from "images/EmptyNotesList";
-// @ts-ignore
-// @ts-ignore
 import { Button, PageLoader } from "neetoui";
-// @ts-ignore
 import { Container, Header } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
