@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// @ts-ignore
 import { Table as NeetoUITable } from "neetoui";
 
 import { NOTES_TABLE_COLUMN_DATA } from "./constants";

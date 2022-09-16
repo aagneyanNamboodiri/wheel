@@ -1,14 +1,7 @@
 import * as yup from "yup";
 
-const CONTACTS_LIST = ["Oliver Smith", "Bilbo Baggins", "Frodo Baggins"];
-const TAGS_LIST = [
-  "Getting started",
-  "Onboarding",
-  "User Flow",
-  "UX",
-  "Bugs",
-  "V2",
-];
+const CONTACTS = ["Oliver Smith", "Bilbo Baggins", "Frodo Baggins"];
+const TAGS = ["Getting started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
 
 export const CONTACT_OPTIONS = [
   {
@@ -62,8 +55,8 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
-  contactList: yup.string().oneOf(CONTACTS_LIST),
-  tagList: yup.string().oneOf(TAGS_LIST),
+  contactList: yup.string().oneOf(CONTACTS),
+  tagList: yup.string().oneOf(TAGS),
 });
 
 export const NOTES_TABLE_COLUMN_DATA = [
