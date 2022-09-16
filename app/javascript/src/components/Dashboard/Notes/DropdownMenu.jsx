@@ -1,31 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { MenuVertical } from "neetoicons";
 import { Dropdown } from "neetoui";
 
-import DeleteAlert from "./DeleteAlert";
-
-const DropdownMenu = ({ refetch, noteId, setSelectedNoteIds }) => {
-  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
-
+const DropdownMenu = ({ note, handleNoteDeletion }) => {
   const handleDelete = () => {
-    setShowDeleteAlert(true);
+    handleNoteDeletion(note.id);
   };
   return (
-    <>
-      <Dropdown buttonStyle="text" icon={MenuVertical}>
-        <li>Edit</li>
-        <li onClick={handleDelete}>Delete</li>
-      </Dropdown>
-      {showDeleteAlert && (
-        <DeleteAlert
-          refetch={refetch}
-          selectedNoteIds={[noteId]}
-          setSelectedNoteIds={setSelectedNoteIds}
-          onClose={() => setShowDeleteAlert(false)}
-        />
-      )}
-    </>
+    <Dropdown buttonStyle="text" icon={MenuVertical}>
+      <li>Edit</li>
+      <li onClick={handleDelete}>Delete</li>
+    </Dropdown>
   );
 };
 
