@@ -1,7 +1,5 @@
-// @ts-nocheck
 import React, { useState, useEffect } from "react";
 
-// @ts-ignore
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
@@ -11,7 +9,7 @@ import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import HeaderMenu from "./HeaderMenu";
-import NoteCard from "./NoteCard";
+import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
@@ -19,7 +17,7 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
+  const [selectedNoteId, setSelectedNoteId] = useState(-1);
   const [notes, setNotes] = useState([]);
   const [menuBarVisibility, setMenuBarVisibility] = useState(false);
 
@@ -38,6 +36,11 @@ const Notes = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleNoteDeletion = noteId => {
+    setSelectedNoteId(noteId);
+    setShowDeleteAlert(true);
   };
 
   if (loading) {
@@ -67,7 +70,13 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          notes.map(note => <NoteCard key={note.id} note={note} />)
+          notes.map(note => (
+            <Note
+              handleNoteDeletion={handleNoteDeletion}
+              key={note.id}
+              note={note}
+            />
+          ))
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
@@ -85,8 +94,8 @@ const Notes = () => {
         {showDeleteAlert && (
           <DeleteAlert
             refetch={fetchNotes}
-            selectedNoteIds={selectedNoteIds}
-            setSelectedNoteIds={setSelectedNoteIds}
+            selectedNoteIds={selectedNoteId}
+            setSelectedNoteIds={setSelectedNoteId}
             onClose={() => setShowDeleteAlert(false)}
           />
         )}
