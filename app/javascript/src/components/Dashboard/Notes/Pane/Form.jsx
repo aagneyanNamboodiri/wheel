@@ -63,6 +63,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
                 placeholder="Select Contact"
               />
               <Select
+                isMulti
                 required
                 className="pt-4"
                 label="Tags"
