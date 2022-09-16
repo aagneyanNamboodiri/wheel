@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Table as NeetoUITable, Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import { COLUMN_DATA } from "./constants";
+import { COLUMN_DATA, ROW_DATA } from "./constants";
 import HeaderMenu from "./HeaderMenu";
 
 const Contact = () => {
@@ -25,7 +25,11 @@ const Contact = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <NeetoUITable allowRowClick columnData={COLUMN_DATA} rowData={[]} />
+        <NeetoUITable
+          allowRowClick
+          columnData={COLUMN_DATA}
+          rowData={ROW_DATA}
+        />
       </Container>
     </>
   );

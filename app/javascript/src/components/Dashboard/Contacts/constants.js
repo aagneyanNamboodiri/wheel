@@ -1,30 +1,8 @@
 export const COLUMN_DATA = [
   {
-    title: "ID",
-    dataIndex: "id",
-    key: "id",
-    width: 75,
-    sorter: (a, b) => a.id - b.id,
-  },
-  {
-    title: "GUID",
-    dataIndex: "guid",
-    key: "guid",
-    width: 150,
-    ellipsis: {
-      showTitle: false,
-    },
-  },
-  {
-    title: "First Name",
-    dataIndex: "first_name",
-    key: "first_name",
-    width: 150,
-  },
-  {
-    title: "Last Name",
-    dataIndex: "last_name",
-    key: "last_name",
+    title: "Name & Role",
+    dataIndex: "name_and_role",
+    key: "name_and_role",
     width: 150,
   },
   {
@@ -37,12 +15,20 @@ export const COLUMN_DATA = [
     },
   },
   {
-    title: "Company Name",
-    dataIndex: "company_name",
-    key: "company_name",
+    title: "Created at",
+    dataIndex: "created_at",
+    key: "created_at",
     ellipsis: {
       showTitle: false,
     },
     width: 75,
+  },
+];
+
+export const ROW_DATA = [
+  {
+    name_and_role: "Aagneyan",
+    email: "agu",
+    created_at: "some day",
   },
 ];
