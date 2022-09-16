@@ -12,6 +12,10 @@ const DeleteAlert = ({
 }) => {
   const [deleting, setDeleting] = useState(false);
 
+  const deleteNotePrompt = "Delete this Note?";
+  const deleteNoteMessage =
+    "Are you sure you want to continue? This cannot be undone.";
+
   const handleDelete = async () => {
     try {
       setDeleting(true);
@@ -30,8 +34,8 @@ const DeleteAlert = ({
     <Alert
       isOpen
       isSubmitting={deleting}
-      message="Are you sure you want to continue? This cannot be undone."
-      title={`Delete this note?`}
+      message={deleteNoteMessage}
+      title={deleteNotePrompt}
       onClose={onClose}
       onSubmit={handleDelete}
     />

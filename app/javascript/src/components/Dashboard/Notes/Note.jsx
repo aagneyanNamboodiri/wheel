@@ -8,6 +8,7 @@ import DropdownMenu from "./DropdownMenu";
 
 const Note = ({ note, handleNoteDeletion }) => {
   const noteLastCreatedAt = "Created 2 hours ago";
+
   return (
     <div className="m-3 w-full space-y-2 border p-4 shadow-md">
       <div className="flex justify-between">
@@ -23,7 +24,7 @@ const Note = ({ note, handleNoteDeletion }) => {
         <div className="flex justify-between pt-1">
           <Clock className="pt-1" size={15} />
           <Tooltip
-            content="Wednesday, 10:30AM"
+            content="2 hours ago"
             followCursor="horizontal"
             position="bottom"
           >
