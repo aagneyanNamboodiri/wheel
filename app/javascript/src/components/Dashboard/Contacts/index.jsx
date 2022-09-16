@@ -1,60 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Table as NeetoUITable } from "neetoui";
+import { Table as NeetoUITable, Button } from "neetoui";
+import { Container, Header } from "neetoui/layouts";
 
-const columns = [
-  {
-    title: "ID",
-    dataIndex: "id",
-    key: "id",
-    width: 75,
-    sorter: (a, b) => a.id - b.id,
-  },
-  {
-    title: "GUID",
-    dataIndex: "guid",
-    key: "guid",
-    width: 150,
-    ellipsis: {
-      showTitle: false,
-    },
-  },
-  {
-    title: "First Name",
-    dataIndex: "first_name",
-    key: "first_name",
-    width: 150,
-  },
-  {
-    title: "Last Name",
-    dataIndex: "last_name",
-    key: "last_name",
-    width: 150,
-  },
-  {
-    title: "Email",
-    dataIndex: "email",
-    key: "email",
-    width: 200,
-    ellipsis: {
-      showTitle: false,
-    },
-  },
-  {
-    title: "Company Name",
-    dataIndex: "company_name",
-    key: "company_name",
-    ellipsis: {
-      showTitle: false,
-    },
-    width: 75,
-  },
-];
+import { COLUMN_DATA } from "./constants";
+import HeaderMenu from "./HeaderMenu";
 
-const index = () => (
-  <div>
-    <NeetoUITable allowRowClick columnData={columns} rowData={[]} />
-  </div>
-);
+const Contact = () => {
+  const [menuBarVisibility, setMenuBarVisibility] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  return (
+    <>
+      <HeaderMenu showMenu={menuBarVisibility} />
+      <Container>
+        <Header
+          actionBlock={<Button icon="ri-add-line" label="Add New Contact" />}
+          title="All Contacts"
+          menuBarToggle={() => {
+            setMenuBarVisibility(prevState => !prevState);
+          }}
+          searchProps={{
+            placeholder: "Search name, Email, Phone Number, Ect.",
+            value: searchTerm,
+            onChange: e => setSearchTerm(e.target.value),
+          }}
+        />
+        <NeetoUITable allowRowClick columnData={COLUMN_DATA} rowData={[]} />
+      </Container>
+    </>
+  );
+};
 
-export default index;
+export default Contact;
