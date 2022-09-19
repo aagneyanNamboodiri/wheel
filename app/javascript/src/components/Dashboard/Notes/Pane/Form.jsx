@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane, Select } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane } from "neetoui";
+import { Select, Input, Textarea } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
