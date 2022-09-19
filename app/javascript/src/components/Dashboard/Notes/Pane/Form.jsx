@@ -58,15 +58,16 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               <Select
                 required
                 label="Assigned Contact"
-                name="contactList"
+                name="contact"
                 options={CONTACT_OPTIONS}
                 placeholder="Select Contact"
               />
               <Select
+                isMulti
                 required
                 className="pt-4"
                 label="Tags"
-                name="tagList"
+                name="tags"
                 options={TAG_OPTIONS}
                 placeholder="Select tag"
               />
