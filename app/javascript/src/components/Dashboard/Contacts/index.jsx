@@ -5,7 +5,7 @@ import { Container, Header } from "neetoui/layouts";
 
 import { COLUMN_DATA, ROW_DATA } from "./constants";
 import HeaderMenu from "./HeaderMenu";
-import NewContactPane from "./Pane/Create";
+import NewContactPane from "./Pane/NewContactPane";
 
 const Contact = () => {
   const [menuBarVisibility, setMenuBarVisibility] = useState(false);
