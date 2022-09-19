@@ -4,7 +4,7 @@ import { MenuHorizontal } from "neetoicons";
 import { Typography, Dropdown, Avatar } from "neetoui";
 import * as yup from "yup";
 
-const MenuIcon = () => (
+const ActionDropdown = () => (
   <Dropdown buttonStyle="text" icon={MenuHorizontal}>
     <li>Edit</li>
     <li>Delete</li>
@@ -63,7 +63,7 @@ export const COLUMN_DATA = [
     dataIndex: "icon_button",
     fixed: "right",
     key: "icon_button",
-    render: MenuIcon,
+    render: ActionDropdown,
     title: "",
     width: 150,
   },
