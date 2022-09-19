@@ -88,3 +88,18 @@ export const ROW_DATA = [
     role: "Tech Lead",
   },
 ];
+
+export const ROLES = [
+  {
+    label: "Software Engineer",
+    value: "value1",
+  },
+  {
+    label: "Full Stack Developer",
+    value: "value2",
+  },
+  {
+    label: "Tech Lead",
+    value: "value3",
+  },
+];
