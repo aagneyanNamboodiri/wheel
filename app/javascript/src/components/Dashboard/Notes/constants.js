@@ -1,8 +1,5 @@
 import * as yup from "yup";
 
-const CONTACTS = ["Oliver Smith", "Bilbo Baggins", "Frodo Baggins"];
-const TAGS = ["Getting started", "Onboarding", "User Flow", "UX", "Bugs", "V2"];
-
 export const CONTACT_OPTIONS = [
   {
     label: "Oliver Smith",
@@ -50,13 +47,31 @@ export const USER_IMG_URL =
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
   description: "",
+  contact: null,
+  tags: [],
 };
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
-  contactList: yup.string().oneOf(CONTACTS),
-  tagList: yup.string().oneOf(TAGS),
+  contact: yup
+    .object()
+    .nullable()
+    .shape({
+      label: yup.string().oneOf(CONTACT_OPTIONS.map(contact => contact.label)),
+      value: yup.string().oneOf(CONTACT_OPTIONS.map(contact => contact.value)),
+    })
+    .required("Please select a contact"),
+  tags: yup
+    .array()
+    .of(
+      yup.object().shape({
+        label: yup.string().oneOf(TAG_OPTIONS.map(tag => tag.label)),
+        value: yup.string().oneOf(TAG_OPTIONS.map(tag => tag.value)),
+      })
+    )
+    .min(1, "Every note should have atleast 1 tag")
+    .required("Please select a tag"),
 });
 
 export const NOTES_TABLE_COLUMN_DATA = [

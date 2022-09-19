@@ -4,17 +4,10 @@ import { MenuHorizontal } from "neetoicons";
 import { Typography, Dropdown, Avatar } from "neetoui";
 import * as yup from "yup";
 
-const MenuIcon = () => (
-  <Dropdown buttonStyle="text" icon={MenuHorizontal}>
-    <li>Edit</li>
-    <li>Delete</li>
-  </Dropdown>
-);
-
 export const USER_IMG_URL =
   "https://www.gravatar.com/avatar/1b8fabaa8d66250a7049bdb9ecf44397?s=250&d=mm&r=x";
 
-export const COLUMN_DATA = [
+export const buildColumnData = setShowDeleteAlert => [
   {
     title: "Name & Role",
     dataIndex: "name",
@@ -63,7 +56,12 @@ export const COLUMN_DATA = [
     dataIndex: "icon_button",
     fixed: "right",
     key: "icon_button",
-    render: MenuIcon,
+    render: () => (
+      <Dropdown buttonStyle="text" icon={MenuHorizontal}>
+        <li>Edit</li>
+        <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
+      </Dropdown>
+    ),
     title: "",
     width: 150,
   },
@@ -114,6 +112,7 @@ export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .required("Email address is required"),
   role: yup
     .object()
+    .nullable()
     .shape({
       label: yup.string().oneOf(ROLE_LIST.map(role => role.label)),
       value: yup.string().oneOf(ROLE_LIST.map(role => role.value)),
