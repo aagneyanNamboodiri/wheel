@@ -77,7 +77,7 @@ export const ROW_DATA = [
     role: "Software Engineer",
   },
   {
-    name: "Jacon Jones",
+    name: "Jacob Jones",
     email: "jacob@example.com",
     created_at: "August 17, 2022",
     role: "Full stack developer",
