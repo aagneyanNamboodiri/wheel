@@ -73,7 +73,13 @@ const ContactForm = ({ onClose }) => {
               style="primary"
               type="submit"
             />
-            <Button label="Reset" size="large" style="text" type="reset" />
+            <Button
+              label="Cancel"
+              size="large"
+              style="text"
+              type="reset"
+              onClick={onClose}
+            />
           </Pane.Footer>
         </Form>
       )}
