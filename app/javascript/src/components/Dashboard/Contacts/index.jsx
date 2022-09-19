@@ -39,8 +39,8 @@ const Contact = () => {
           rowData={ROW_DATA}
         />
         <NewContactPane
-          setShowPane={setShowNewContactPane}
           showPane={showNewContactPane}
+          onClose={() => setShowNewContactPane(false)}
         />
       </Container>
     </>

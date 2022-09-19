@@ -2,6 +2,7 @@ import React from "react";
 
 import { MenuHorizontal } from "neetoicons";
 import { Typography, Dropdown, Avatar } from "neetoui";
+import * as yup from "yup";
 
 const MenuIcon = () => (
   <Dropdown buttonStyle="text" icon={MenuHorizontal}>
@@ -89,7 +90,7 @@ export const ROW_DATA = [
   },
 ];
 
-export const ROLES = [
+export const ROLE_LIST = [
   {
     label: "Software Engineer",
     value: "value1",
@@ -103,3 +104,26 @@ export const ROLES = [
     value: "value3",
   },
 ];
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  firstname: yup.string().required("First name is required"),
+  lastname: yup.string().required("Last name is required"),
+  email: yup
+    .string()
+    .email("Please enter a valid E-mail address")
+    .required("Email address is required"),
+  role: yup
+    .object()
+    .shape({
+      label: yup.string().oneOf(ROLE_LIST.map(role => role.label)),
+      value: yup.string().oneOf(ROLE_LIST.map(role => role.value)),
+    })
+    .required("Role is required"),
+});
+
+export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  role: null,
+};
