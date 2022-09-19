@@ -1,4 +1,3 @@
-// @ts-ignore
 import { Notes, Settings, UserCircle } from "neetoicons";
 
 export const APP_NAME = "Wheel";
