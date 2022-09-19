@@ -31,7 +31,6 @@ const Notes = () => {
       const { data } = await notesApi.fetch();
       setNotes(data.notes);
     } catch (error) {
-      // @ts-ignore
       logger.error(error);
     } finally {
       setLoading(false);

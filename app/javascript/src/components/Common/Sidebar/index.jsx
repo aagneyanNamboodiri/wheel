@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// @ts-ignore
 import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
 
@@ -27,7 +26,6 @@ const Sidebar = () => {
       authDispatch({ type: "LOGOUT" });
       window.location.href = LOGIN_PATH;
     } catch (error) {
-      // @ts-ignore
       logger.error(error);
     }
   };

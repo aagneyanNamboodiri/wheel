@@ -24,7 +24,6 @@ const DeleteAlert = ({
       setSelectedNoteIds([]);
       refetch();
     } catch (error) {
-      // @ts-ignore
       logger.error(error);
       setDeleting(false);
     }
