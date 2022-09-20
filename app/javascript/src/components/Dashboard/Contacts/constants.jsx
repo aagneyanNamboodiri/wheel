@@ -117,7 +117,7 @@ export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
       label: yup.string().oneOf(ROLE_LIST.map(role => role.label)),
       value: yup.string().oneOf(ROLE_LIST.map(role => role.value)),
     })
-    .required("Role is required"),
+    .required("Please select a role"),
 });
 
 export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
