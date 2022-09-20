@@ -70,7 +70,7 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
         value: yup.string().oneOf(TAG_OPTIONS.map(tag => tag.value)),
       })
     )
-    .min(1, "Every note should have atleast 1 tag")
+    .min(1, "Please select a tag")
     .required("Please select a tag"),
 });
 
